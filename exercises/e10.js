@@ -3,9 +3,20 @@
 // Array example: bankAccounts in /data/data.js
 // getClientsWithLetterInName(bankAccounts, 'e') => ['Kevin', 'Steven', ...]
 
+import { bankAccounts } from "../data/data";
+
 export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
-
+  let arr = [];
+  for (let i = 0; i < array.length; i++) {
+    let str = array[i].name;
+    for (const x in str) {
+      if (str[x].toUpperCase() === letter.toUpperCase()) {
+        arr.push(array[i].name);
+      }
+    }
+  }
+  return arr;
 }
 
 // === TEST YOURSELF ===

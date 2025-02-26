@@ -2,10 +2,20 @@
 // for every number between 0 and max find all numbers that have square roots that are integers
 // getNumbersWithSquareRoots(17) => [0, 1, 4, 9, 16]
 
+import { get } from "server/router";
+
 export function getNumbersWithSquareRoots(max) {
   // Your code goes here...
-
+  const arr = [];
+  for (var i = 0; i < max; i++) {
+    if (Number.isInteger(Math.sqrt(i))) {
+      arr.push(i);
+    }
+  }
+  return arr;
 }
+console.log(getNumbersWithSquareRoots(50));
+console.log(getNumbersWithSquareRoots(200));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-2"
